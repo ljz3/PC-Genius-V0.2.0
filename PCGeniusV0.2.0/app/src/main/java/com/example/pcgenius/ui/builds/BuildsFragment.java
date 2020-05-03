@@ -1,4 +1,4 @@
-package com.example.pcgenius.ui.slideshow;
+package com.example.pcgenius.ui.builds;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.pcgenius.R;
 
-public class SlideshowFragment extends Fragment {
+public class BuildsFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private BuildsViewModel buildsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        buildsViewModel =
+                ViewModelProviders.of(this).get(BuildsViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_builds, container, false);
+        final TextView textView = root.findViewById(R.id.text_builds);
+        buildsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
