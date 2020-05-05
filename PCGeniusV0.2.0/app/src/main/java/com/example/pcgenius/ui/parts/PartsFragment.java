@@ -16,20 +16,13 @@ import com.example.pcgenius.R;
 
 public class PartsFragment extends Fragment {
 
-    private PartsViewModel partsViewModel;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        partsViewModel =
-                ViewModelProviders.of(this).get(PartsViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_parts, container, false);
-        final TextView textView = root.findViewById(R.id.text_parts);
-        partsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }
